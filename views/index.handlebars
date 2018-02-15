@@ -1,0 +1,38 @@
+<h1>Hamburgler</h1>
+
+<h2>Burgers in safe-keeping</h2>
+
+<ul> 
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{burger_name}}
+      <button class="devour" data-id="{{id}}" data-devoured="1">
+        Steal
+      </button>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers we've lost</h2>
+
+<ul> 
+  {{#each burgers}}
+    {{#if devoured}}
+      {{burger_name}}
+      <button class="devour" data-id="{{id}}" data-devoured="0">
+        Hide
+      </button>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger to the vault</h2>
+<form class="add">
+
+  <div class="form-group">
+    <label for="burger">Burger Name:</label>
+    <input type="text" id="burger" name="burger_name">
+  </div>
+
+  <button type="submit">Lock</button>
+</form>
