@@ -3,7 +3,6 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', function(req, res) {
-  console.log('get');
   burger.selectAll(
     function(allRows) {
       let handlebarsBurgers = {
@@ -15,7 +14,6 @@ router.get('/', function(req, res) {
 });
 
 router.post('/burgers', function(req, res) {
-  console.log('post');
   let columns = Object.keys(req.body);
   let values = Object.values(req.body);
 
@@ -29,7 +27,6 @@ router.post('/burgers', function(req, res) {
 });
 
 router.put('/burgers/:id', function(req, res) {
-  console.log('put');
   let columnsEqValues = req.body;
   let value = req.params.id;
 

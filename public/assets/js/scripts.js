@@ -20,7 +20,6 @@ $(document).ready(function() {
 
   $('.add').on('submit', function(event) {
     event.preventDefault();
-    console.log('submitting form');
     var newBurger = {
       burger_name: $('#burger').val().trim()
     };

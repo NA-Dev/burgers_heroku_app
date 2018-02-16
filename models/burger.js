@@ -2,7 +2,6 @@ const orm = require('../config/orm.js');
 
 const burger = {
   selectAll: function(cb) {
-    console.log("selectAll");
     orm.selectAll(
       "burgers", 
       function(allRows) {
@@ -12,7 +11,6 @@ const burger = {
   },
 
   insertOne: function(columns, values, cb) {
-    console.log("insertOne");
     orm.insertOne(
       "burgers", 
       columns, 
@@ -24,7 +22,6 @@ const burger = {
   },
 
   updateOne: function(columnsEqValues, value, cb) {
-    console.log("updateOne");
     orm.updateOne(
       "burgers", 
       columnsEqValues,
