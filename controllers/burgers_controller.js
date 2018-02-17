@@ -43,4 +43,19 @@ router.put('/burgers/:id', function(req, res) {
   );
 });
 
+router.delete('/burgers/:id', function(req, res) {
+  let value = req.params.id;
+
+  burger.deleteOne(
+    value,
+    function(result) {
+      if (result.affectedRows == 0) {
+        res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
+    }
+  );
+});
+
 module.exports = router;

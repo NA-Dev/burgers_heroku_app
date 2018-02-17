@@ -31,6 +31,16 @@ const burger = {
       }
     );
   },
+
+  deleteOne: function(value, cb) {
+    orm.deleteOne(
+      "burgers", 
+      value, 
+      function(result) {
+        cb(result);
+      }
+    );
+  },
 };
 
 module.exports = burger;

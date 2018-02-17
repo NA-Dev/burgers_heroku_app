@@ -1,38 +1,13 @@
-<h1>Hamburgler</h1>
-
-<h2>Burgers in safe-keeping</h2>
-
-<ul> 
+<h3 class="text-center mb-3">Click a burger to steal a bite</h3>
+<div class="card-columns">
   {{#each burgers}}
-    {{#unless devoured}}
-      {{burger_name}}
-      <button class="devour" data-id="{{id}}" data-devoured="1">
-        Steal
-      </button>
-    {{/unless}}
+    <div class="card" data-id="{{id}}" data-devoured="{{devoured}}">
+      <img class="card-img devoured-{{devoured}}">
+      <div class="card-img-overlay">
+        <h5 class="text-center card-title">
+          {{burger_name}}
+        </h5>
+      </div>
+    </div>
   {{/each}}
-</ul>
-
-<h2>Burgers we've lost</h2>
-
-<ul> 
-  {{#each burgers}}
-    {{#if devoured}}
-      {{burger_name}}
-      <button class="devour" data-id="{{id}}" data-devoured="0">
-        Hide
-      </button>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger to the vault</h2>
-<form class="add">
-
-  <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="burger" name="burger_name">
-  </div>
-
-  <button type="submit">Lock</button>
-</form>
+</div>
